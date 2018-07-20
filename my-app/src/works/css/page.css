@@ -1,0 +1,24 @@
+/*页码*/
+.page{
+    width:40%;
+    float:right;
+
+}
+.page a li{
+    display:inline-block;
+    min-width:30px;
+    height:30px;
+
+    text-align:center;
+    padding:3px 5px;
+    border:1px solid #ddd;
+    margin-right:5px;
+    color:#000;
+}
+.page a li.active{
+    border:1px solid #1ab394;
+    color:#1ab394;
+}
+.page a li.nomore{
+    display:none;
+}

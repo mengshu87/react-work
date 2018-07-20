@@ -1,0 +1,29 @@
+登录
+
+   http://localhost:8088/user/login
+
+获取部门数据
+
+   http://localhost:8088/department?act=get&page=页码
+
+添加部门数据
+  
+   http://localhost:8088/department	
+	
+	post	请求
+	
+	
+
+删除数据
+
+   http://localhost:8088/department?act=del&id=id
+
+编辑数据
+
+   http://localhost:8088/department/bj
+	  
+	
+
+	
+
+

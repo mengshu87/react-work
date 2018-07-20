@@ -1,0 +1,91 @@
+#schedule .events {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#schedule .events .ant-badge-status {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+#schedule .notes-month {
+    text-align: center;
+    font-size: 28px;
+}
+#schedule .notes-month section {
+    font-size: 28px;
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-column-header{
+    text-align:center;
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-value{
+    text-align:center;
+}
+#schedule .ant-fullcalendar-value{
+    line-height:100px;
+    font-size:16px;
+    font-weight:100;
+    color:#000;
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-month, #schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-date{
+    border-top:none;
+    margin:0;
+}
+#schedule .ant-fullcalendar td{
+    border-top:1px solid #E9E9E9;
+    border-right:1px solid #E9E9E9;
+}
+#schedule .ant-fullcalendar .ant-fullcalendar-tbody tr:last-child{
+    border-bottom:1px solid #E9E9E9;
+}
+#schedule .ant-fullcalendar td:first-child{
+    border-left:1px solid #E9E9E9;
+}
+#schedule .ant-fullcalendar-table thead{
+    background:#f1f1f1;
+    border:1px solid #E9E9E9;
+    border-bottom:none;
+    border-right:none;
+}
+#schedule .ant-fullcalendar-table thead th{
+    border-right:1px solid #E9E9E9;
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-column-header{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#schedule .ant-radio-button-wrapper-checked{
+    border-color:#19aa8d;
+}
+#schedule .ant-radio-button-wrapper-checked:first-child{
+    border-color:#19aa8d;
+}
+#schedule .ant-radio-button-wrapper-checked{
+    color:#19aa8d;
+}
+#schedule .ant-select-open .ant-select-selection{
+    border-color:#19aa8d;
+}
+#schedule .ant-select-open .ant-select-selection,
+#schedule .ant-select-selection:focus,#schedule .ant-select-selection:active,#schedule .ant-select-selection:hover{
+    border-color:#19aa8d;
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-month:hover,
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-date:hover{
+    /*background:#d4ebe6;*/
+}
+#schedule .ant-fullcalendar-fullscreen .ant-fullcalendar-month-panel-selected-cell .ant-fullcalendar-value,#schedule  .ant-fullcalendar-fullscreen .ant-fullcalendar-selected-day .ant-fullcalendar-value{
+    color:#00AA88;
+    font-size:18px;
+    font-weight:600;
+}
+
+
+#schedule .ant-fullcalendar-next-month-btn-day .ant-fullcalendar-value{
+    color:#e1e1e1;
+}
+#schedule .ant-fullcalendar-last-month-cell .ant-fullcalendar-value{
+    color:#e1e1e1;
+}

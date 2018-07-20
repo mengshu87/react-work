@@ -1,0 +1,72 @@
+.calendar{
+    background:#fff;
+    width:98%;
+    margin:20px auto;
+    border-radius:5px;
+}
+.calendar .calTitle{
+    width:100%;
+    text-align:center;
+    line-height:40px;
+    padding-top:30px;
+}
+.calendar .calTitle img{
+    vertical-align: sub;
+    cursor:pointer;
+}
+.calendar .calTitle span{
+    width:100px;
+    display:inline-block;
+    text-align:center;
+}
+.calendar .calBd{
+    padding-bottom:30px;
+}
+.calendar .calBd table{
+    border-collapse: collapse;
+    width:96%;
+    margin:20px auto;
+    text-align:center;
+}
+.calendar .calBd table thead tr th{
+    border:1px solid #E9E9E9;
+    height:40px;
+    width:10%;
+    background:#F1F1F1;
+}
+.calendar .calBd table tbody tr td{
+    border:1px solid #E9E9E9;
+    height:100px;
+    font-size:16px;
+    font-weight:100;
+    color:#000;
+    position:relative;
+
+}
+.calendar .calBd table tbody tr td.active{
+    color:#00AA88;
+    font-size:18px;
+    font-weight:600;
+}
+.calendar .calBd table tbody tr td span{
+    width:10px;
+    height:10px;
+    display:inline-block;
+    border-radius:50%;
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+.calendar .calBd table tbody tr td .gray{
+    background:#c0c0c0;
+}
+.calendar .calBd table tbody tr td .red{
+    background:#f5222d;
+}
+.calendar .calBd table tbody tr td .green{
+     background:#00AA88;
+ }
+
+
+
+

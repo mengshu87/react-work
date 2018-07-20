@@ -1,0 +1,209 @@
+.mainHeader{
+    width:100%;
+    overflow:hidden;
+}
+.mainHeader .headerPhoto{
+    float:left;
+    margin:30px;
+    width:72px;
+    height:72px;
+}
+.mainHeader .headerPhoto img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+.mainHeader .headerName{
+    float:left;
+    width:400px;
+    margin-top:30px;
+
+}
+.mainHeader .headerName p{
+    margin:0;
+    padding:0;
+    line-height:35px;
+}
+.mainHeader .headerName .name{
+    font-size:18px;
+}
+.mainHeader .headerName .job{
+    color:rgba(0,0,0,.45)
+}
+.mainHeader .headTips{
+    float:right;
+    margin-right:6%;
+    margin-top:10px;
+}
+.mainHeader .headTips li{
+    float:left;
+    text-align:center;
+    width:100px;
+}
+.mainHeader .headTips li.line{
+    width:1px;
+    height:50px;
+    background:#d4dadf;
+    margin-top:25px;
+}
+.mainHeader .headTips li p{
+    margin:0;
+    padding:0;
+    line-height:40px;
+}
+.mainHeader .headTips li p:nth-of-type(2){
+    font-size:26px;
+    font-weight:400;
+    color:#f5222d;
+}
+.mainLeft{
+    margin:0 20px;
+    width:50%;
+    height:auto;
+    background:#fff;
+    border-radius:5px;
+    overflow:hidden;
+    padding:15px;
+    float:left;
+}
+.mainLeft h6{
+    margin:0;
+    line-height:40px;
+    font-size:16px;
+}
+.mainLeft .say{
+    width:95%;
+    margin:0 auto;
+}
+.mainLeft .say input{
+    width:100%;
+    height:30px;
+    border:1px solid #d4dadf;
+    padding:3px;
+}
+.mainLeft .tabs{
+    width:95%;
+    margin:20px auto;
+}
+.mainLeft .tabs .tabList{
+    width:100%;
+    overflow:hidden;
+    border-bottom:1px solid #d4dadf;
+}
+.mainLeft .tabs .tabList a{
+    float:left;
+    width:20%;
+    line-height:35px;
+    text-align:center;
+    color:#000;
+}
+.mainLeft .tabs .tabList a.active{
+    color:#1ab394;
+    border-bottom:3px solid #1ab394;
+}
+.mainLeft .tabs .box{
+
+}
+.mainLeft .tabs .box .ListCont{
+    overflow:hidden;
+    border-bottom:1px solid #d4dadf;
+}
+.mainLeft .tabs .box .ListCont .photo{
+    float:left;
+    width:42px;
+    height:42px;
+    border-adius:5px;
+    border:1px solid #d4dadf;
+    margin:20px 20px 20px 0;
+}
+.mainLeft .tabs .box .ListCont .photo img{
+    width:100%;
+    height:100%;
+}
+.mainLeft .tabs .box .ListCont .content{
+    float:left;
+    width:84%;
+    margin-top:20px;
+    color:#000;
+}
+.mainLeft .tabs .box .ListCont .content .name{
+    color:#3399cc;
+}
+.mainLeft .tabs .box .ListCont .btns{
+    width:88%;
+    float:left;
+    font-size:12px;
+    margin-top:10px;
+    margin-left:11%;
+}
+.mainLeft .tabs .box .boxCont{
+    display:none;
+}
+.mainLeft .tabs .box .show{
+    display:block;
+}
+.mainLeft .tabs .box .ListCont .btns a{
+    display:inline-block;
+    float:right;
+    margin-right:10px;
+}
+.mainLeft .tabs .box .ListCont .btns a i{
+    font-size:13px;
+}
+.mainLeft .tabs .box .ListCont .btns a.time{
+    float:left;
+}
+.mainRight{
+    float:left;
+    width:41%;
+    background:#fff;
+    border-radius:5px;
+    height:300px;
+    padding:15px;
+}
+.mainRight h6{
+    margin:0;
+    line-height:40px;
+    width:95%;
+    font-size:16px;
+}
+.mainRight h6 span{
+    float:right;
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background:#39c;
+    border-radius:50%;
+    margin-top:10px;
+    position:relative;
+    cursor:pointer;
+}
+.mainRight h6 span i{
+    font-size:6px;
+    color:#fff;
+    position:absolute;
+    left:4px;
+    top:-9px;
+}
+.mainRight .workCont{
+    width:96%;
+    margin:0 auto;
+}
+.mainRight .workCont p{
+    width:100%;
+    line-height:60px;
+    font-size:12px;
+    border-bottom:1px dotted #d4dadf;
+}
+.mainRight .workCont p span:nth-of-type(1){
+    width:10px;
+    height:10px;
+    display:inline-block;
+    background:#00BFFF;
+    border-radius:50%;
+    margin-right:20px;
+}
+.mainRight .workCont p span:nth-of-type(3){
+    float:right;
+}
+

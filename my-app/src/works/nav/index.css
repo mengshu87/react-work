@@ -1,0 +1,95 @@
+nav{
+    float:left;
+    width:220px;
+    height:100%;
+    background:#2f4050;
+    position:fixed;
+}
+nav .left{
+
+}
+.leftPhoto{
+    padding:23px;
+    background-color:#2f4050;
+    background-image:url(../img/header-profile.png);
+    background-size:100%;
+    background-repeat:no-repeat;
+}
+.left .photo{
+    position:relative;
+}
+.photo span{
+}
+.photo span img{
+    margin:10px 0 0 10px;
+    width:48px;
+    border-radius:50%;
+}
+.photo p{
+    margin:0;
+    padding:0;
+}
+.photo p:nth-of-type(1){
+    color:#fff;
+    font-size:14px;
+    line-height:40px;
+}
+.photo p:nth-of-type(2){
+    color:#8095a8;
+    font-size:12px;
+
+}
+.navList{
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    top:-13px;
+}
+.navList > li{
+    position:relative;
+    display:block;
+    line-height:20px;
+}
+.navList > li > a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    padding:14px 20px 14px 25px;
+    color:#a7b1c2;
+}
+.navList>li>a{
+    position:relative;
+    display:block;
+}
+.navList > li > a i{
+    margin-right:6px;
+}
+
+.navList > li.active{
+    background:#293846;
+    border-left:4px solid #19aa8d;
+
+}
+.navList > li.active >a{
+    color:#fff;
+}
+
+.navList > li ul{
+    list-style:none;
+    display:none;
+
+}
+.navList > li.active> .ul{
+    display:block;
+}
+.navList > li > ul > li > a{
+    display:block;
+    padding:10px 20px 10px 50px;
+    color:#a7b1c2;
+
+}
+.navList > li > ul > li.active a{
+    background:#2f435e;
+    color:#fff;
+}

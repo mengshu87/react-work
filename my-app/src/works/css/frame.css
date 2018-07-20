@@ -1,0 +1,150 @@
+.freameSec{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.1);
+    z-index:10;
+    display:none;
+}
+.frame{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:500px;
+    height:480px;
+    margin-left:-250px;
+    margin-top:-240px;
+    border-radius:10px;
+    background:#fff;
+}
+.frame .head{
+    height:50px;
+    line-height:50px;
+    background:#525866;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.frame .head span:nth-of-type(1){
+    color:#fff;
+    font-size:16px;
+    display:inline-block;
+    margin-left:30px;
+}
+.frame .head span:nth-of-type(2){
+    color:#fff;
+    font-size:30px;
+    float:right;
+    margin-right:30px;
+    cursor:pointer;
+}
+.frame .main{
+    width:440px;
+    margin:30px;
+}
+.frame .main div{
+    /*line-height:60px;*/
+    margin-bottom:15px;
+}
+.frame .main div span{
+    display:inline-block;
+    width:100px;
+    text-align:right;
+}
+.frame .main div input[type='text']{
+    width:300px;
+    border:1px solid #e7eaec;
+    height:35px;
+    padding:3px;
+}
+.frame .main div textarea{
+    width:300px;
+    height:40px;
+    border:1px solid #e7eaec;
+    resize:none;
+}
+.frame .main div select{
+    border:1px solid #e7eaec;
+    width:150px;
+    height:35px;
+}
+.frame .main div select option{
+    line-height:30px;
+}
+.frame .main .btn{
+    margin:20px 0 0 150px;
+    width:160px;
+    height:40px;
+    background:#009688;
+    color:#fff;
+    text-align:center;
+    border:none;
+}
+
+
+/*日程弹框*/
+.framework{
+    width:600px;
+    margin-left:-300px;
+}
+.work{
+    width:92%;
+    margin:20px auto;
+}
+.work .worMb select{
+    width:60%;
+    border:1px solid #d4dadf;
+    height:35px;
+}
+.work .btn{
+    width:60%;
+    margin:30px auto;
+}
+.work .btn button{
+    float:left;
+    width:45%;
+    height:40px;
+    color:#fff;
+    border-radius:5px;
+    border:none;
+}
+.work .btn button:nth-of-type(1){
+    margin-right:5%;
+    background:#c0c0c0;
+}
+.work .btn button:nth-of-type(2){
+    background:#1ab394;
+}
+.infoFrame{
+    width:400px;
+    height:175px;
+    margin-left:-200px;
+    margin-top:-90px;
+}
+.addSuccess{
+    width:100%;
+    text-align:center;
+    font-size:16px;
+}
+.infoFrame button{
+    width:120px;
+    height:40px;
+    border:none;
+    background:#00AA88;
+    color:#fff;
+    font-size:14px;
+    border-radius:5px;
+    margin:20px 120px;
+}
+.infoFrame .addRole input{
+    width:270px;
+    height:35px;
+    border:1px solid #d4dadf;
+}
+.setPermiss{
+    width:800px;
+    height:600px;
+    margin-left:-400px;
+    margin-top:-300px;
+}

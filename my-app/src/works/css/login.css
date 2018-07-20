@@ -1,0 +1,90 @@
+.logo{
+    width:500px;
+    height:400px;
+    border:1px solid #e7eaec;
+    background:#fff;
+    border-radius:3px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-200px;
+
+}
+.logo h2{
+    width:100%;
+    text-align:center;
+    line-height:50px;
+    margin:20px auto;
+    color:#009688;
+    letter-spacing:10px;
+    font-weight:bold;
+}
+.logo .user{
+    width:400px;
+    position:relative;
+    left:50px;
+    top:5px;
+}
+.logo .pass{
+    width:400px;
+    position:relative;
+    left:50px;
+    top:100px;
+}
+.logo .user span,.logo .pass span{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:2;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #009688;
+    background:#fff;
+}
+.logo .user span i,.logo .pass span i{
+    font-size:30px;
+    color:#009688;
+}
+.logo .user input,.logo .pass input{
+    position:absolute;
+    left:40px;
+    width:340px;
+    height:51px;
+    top:6px;
+    padding:3px 5px;
+    border:1px solid #009688;
+    text-indent:30px;
+}
+.logo .info{
+    position:absolute;
+    left:120px;
+    top:265px;
+    color:red;
+    display:block;
+}
+
+.logo .btn{
+    position:absolute;
+    bottom:50px;
+    left:140px;
+    width:200px;
+    height:40px;
+    background:#009688;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+}
+
+
+
+
+
+
+
+
+

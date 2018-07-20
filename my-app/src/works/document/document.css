@@ -1,0 +1,89 @@
+.documentBd{
+    width:97%;
+    margin:15px;
+    overflow:hidden;
+}
+.documentBd .documentBtn button{
+    float:left;
+    margin-right:10px;
+    width:120px;
+    height:40px;
+    border:1px solid #d4dadf;
+    background:#fff;
+    color:#00AA88;
+    border-radius:5px;
+}
+.folders{
+    padding:44px 0 0 40px;
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.folders .file-item{
+    float:left;
+    margin-right:40px;
+    margin-bottom:40px;
+    width:180px;
+    height:180px;
+    box-sizing: border-box;
+    background: #ebeff0;
+    border-radius: 4px;
+    position: relative;
+    line-height:120px;
+    text-align: center;
+    border:1px solid #ebeff0;
+    cursor: pointer;
+}
+.folders .active{
+    background: #fff;
+    border:1px solid #54afdc;
+    box-shadow: 0px 0px 10px #d6e8f4;
+}
+.folders .active span{
+    color:#54afdc;
+}
+.folders .file-item:hover{
+    background: #fff;
+    border:1px solid #54afdc;
+    box-shadow: 0px 0px 10px #d6e8f4;
+}
+.folders .file-item:hover i{
+    border:1px solid #d1d8de;
+}
+.folders .file-item:hover span{
+    color:#54afdc;
+}
+.folders .file-item i{
+    cursor: default;
+    position: absolute;
+    left:10px;
+    top:10px;
+    width:16px;
+    height:16px;
+}
+.folders .hov{
+    background: #fff;
+    border:1px solid #54afdc;
+    box-shadow: 0px 0px 10px #d6e8f4;
+}
+.folders .hov i{
+    border:1px solid #d1d8de;
+}
+.folders .checked{
+    border:1px solid #d1d8de;
+    background: url(../img/checked.png) no-repeat;
+}
+.folders .file-item img{
+    width:80px;
+    height:72px;
+    vertical-align:-34px ;
+}
+.folder-name{
+    display: block;
+    width:150px;
+    height:20px;
+    line-height:20px;
+    color:#69737f;
+    margin:0 auto;
+}
