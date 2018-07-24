@@ -117,6 +117,61 @@ router.get('/', (req, res) => {
 
     }
 });
+//登录接口
+router.post('/login',(req,res)=>{
+    const json = {code:3,msg:"错误"};
+    const body = req.body;
+    let {act,checked,name,pass,ygxm,ygzw,bmmc,sjld} = body;
+    switch(act){
+        case 'login':
+            Usermanage.findOne({name},(error,data)=>{
+                if(!data){
+                    json.code = 1;
+                    json.msg = '没有该用户';
+                }else{
+                    if(data.pass == pass){
+                        json.code = 0;
+                        json.msg = '登录成功';
+                        json.data = name;
+                    }else{
+                        console.log('密码错误');
+                        json.code = 2;
+                        json.msg = '用户名或密码错误';
+                    }
+                }
+                res.json(json);
+            });
+            break;
+        case 'findPass':
+            let pass1=req.body.pass;
+            let page3=Number(obj.page);
+            Usermanage.find({pass: pass1})
+                .sort('-time')
+                .skip(PAGE_SIZE * (page3-1))
+                .limit(PAGE_SIZE)
+                .exec((err, data) =>{
+                    let arr=[];
+                    for(let o of data){
+                        let obj2={
+                            id:o._id,
+                            checked:o.checked,
+                            name:o.name,
+                            pass:o.pass,
+                            ygxm:o.ygxm,
+                            ygzw:o.ygzw,
+                            bmmc:o.bmmc,
+                            sjld:o.sjld
+                        }
+                        arr.push(obj2);
+                    }
+                    res.json(arr);
+                })
+            break;
+        default:
+            break;
+    }
+})
+//添加数据接口
 router.post('/',(req,res)=> {
     const json={code: 3, msg: "错误"};
     const body=req.body;
@@ -156,7 +211,7 @@ router.post('/',(req,res)=> {
             break;
     }
 })
-
+//编辑数据接口
 router.post('/bj',(req,res)=> {
     const json = {code: 3, msg: "错误"};
     const body = req.body;

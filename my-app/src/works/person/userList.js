@@ -15,7 +15,7 @@ class UserList extends Component{
     userEdit=()=>{
         let {id,editFrame}=this.props;
         console.log(id);
-        editFrame(id);
+        editFrame(id);      
 
         //该员工属于哪个部门，先去请求接口
         let editPartName=myQuery('#editPartName');
@@ -27,8 +27,6 @@ class UserList extends Component{
             })
             editPartName.innerHTML=html;
         });
-
-
     }
     userDel=()=>{
         let {getUserData,delUserData,id,current}=this.props;

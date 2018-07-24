@@ -79,6 +79,31 @@
     border:none;
     border-radius:5px;
 }
+.logo .sevenLogin{
+    position:absolute;
+    right:70px;
+    bottom:100px;
+}
+.logo .sevenLogin input{
+    margin-right:5px;
+}
+
+.signOut{
+    width:50px;
+    opacity:0;
+    background:#fff;
+    border:1px solid #d4dadf;
+    border-radius:3px;
+    box-shadow: #cccccc 2px 2px 2px;
+    padding:3px 10px;
+    position:absolute;
+    right:-10px;
+    cursor:pointer;
+    transition: .8s;
+}
+.signOut:hover{
+    color:#00AA88;
+}
 
 
 

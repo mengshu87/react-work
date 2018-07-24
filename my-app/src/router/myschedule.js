@@ -7,16 +7,11 @@ router.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     next();
 });
-/*MySchedule.create(
-{checked:false,type:"部门会议",title:"34",local :"55",date:"2018-02-12",date2:"20180212",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"34",local :"55",date:"2018-05-12",date2:"20180512",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"5235",local :"55",date:"2018-01-12",date2:"20180112",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"5235",local :"55",date:"2018-03-12",date2:"20180312",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"5345",local :"55",date:"2017-02-12",date2:"20170212",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"545",local :"55",date:"2016-05-12",date2:"20160512",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"535",local :"55",date:"2013-02-12",date2:"20130212",time:"10:19:04",person:"55",originator:"55"},
-{checked:false,type:"部门会议",title:"555",local :"55",date:"2016-05-12",date2:"20160512",time:"10:19:04",person:"55",originator:"55"},
-);*/
+
+/*
+MySchedule.create({checked:false,type:"部门会议",title:"311",local :"11",date:"2018-07-23",date2:"20180723",time:"10:19:04",person:"11",originator:"11"})
+*/
+
 router.get('/', (req, res) => {
     function toD(n){
         return n=n<10?'0'+n:''+n;
@@ -99,7 +94,7 @@ router.get('/', (req, res) => {
                 json.msg='参数错误';
                 res.json(json);
             }else{
-                MySchedule.find({date2:{$lt: str}})
+                MySchedule.find({date2:{$lte: str}})
                     .skip(PAGE_SIZE * (page2-1))
                     .limit(PAGE_SIZE)
                     .exec((err, data) =>{
@@ -133,7 +128,7 @@ router.get('/', (req, res) => {
             });
             break;
         case 'get_page_count2':      //获取页码对应的数据
-            MySchedule.find({date2:{$lt: str}}).count({},(error,n)=>{
+            MySchedule.find({date2:{$lte: str}}).count({},(error,n)=>{
                 json.code=0;
                 json.msg='页数获取成功！当前设置为' + PAGE_SIZE + '条数据一分页';
                 json.count=Math.ceil(n/PAGE_SIZE);

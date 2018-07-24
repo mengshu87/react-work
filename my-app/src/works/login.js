@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import cookie from 'react-cookies'
+//import {myQuery} from './lib/public';
 import './css/login.css';
 import './css/common.css';
 import './iconfont/iconfont.css'
@@ -26,7 +28,7 @@ class Login extends Component{
         let {tip}=this.refs;
         console.log(tip);
         if(uVal&&pVal){
-                fetch('http://localhost:8088/user',{
+                fetch('http://localhost:8088/usermanage/login',{
                 method:'post',
                 headers:{
                     "Content-Type":"application/x-www-form-urlencoded"
@@ -38,7 +40,8 @@ class Login extends Component{
                 if(data.code===0){
                     this.setState({info:data.msg});
                     setTimeout(function(){
-                        history.push('/index')
+                        history.push('/index');
+                        cookie.save('name', uVal);
                     },1000);
                 }
                 if(data.code===1){
@@ -91,6 +94,7 @@ class Login extends Component{
                         />
                     </div>
                     <div className="info" ref="tip">{info}</div>
+                    {/*<div className="sevenLogin"><input type="checkbox" id="qt"/>7天免登录</div>*/}
                     <button
                         className="btn"
                         onClick={this.click}

@@ -31,10 +31,8 @@ class CompanySchedule extends Component{
         });
         y = this.refs.a.getElementsByClassName('ant-select-selection-selected-value')[0].innerHTML * 1;
         m = this.refs.a.getElementsByClassName('ant-select-selection-selected-value')[1].innerHTML.substr(0, 1) * 1;
-       this.setState({y,m});
+        this.setState({y,m});
     }
-
-
     getYearMonth=(year,month)=>{
         let {y,m}=this.state;
         y=year;
@@ -47,8 +45,6 @@ class CompanySchedule extends Component{
         let month=date.getMonth()+1;
         this.getYearMonth(year,month);
     }
-
-
     getData=(value)=>{
         let arr=[];
         let {getData2}=this.props;
@@ -71,32 +67,37 @@ class CompanySchedule extends Component{
     getListData=(value)=>{
         console.log(value);
         let d=value.map(e=>{
-            return e.date.substr(8,2)*1;
+            return e.date.substr(8,2);
         })
         console.log(d);
-        let listData;
+        let dayArr=[];
 
-        /*switch (value.date()) {
-            case 12:
-                listData = [
-                    { type: 'error' , content: ''}
-
-                ]; break;
-            case 24:
-                listData = [
-                    { type: 'error', content: '' }
-                ]; break;
-            case 26:
-                listData = [
-                    { type: 'error', content: '' }
-
-                ]; break;
-            default:
+        let dd=this.refs.a.getElementsByClassName('ant-fullcalendar-value');
+        for(let i=0;i<dd.length;i++){
+            dayArr.push(dd[i].innerHTML);
         }
-        return listData || [];*/
+        let start=dayArr.indexOf('01');
+        let end=dayArr.indexOf('01')+31;
+        let ms=dayArr.slice(start,end);
+        console.log(ms);
+        for(let i=0;i<ms.length;i++){
+            for(let j=0;j<d.length;j++){
+                if(d[j]===ms[i]){
+
+                    console.log(ms[i]);
+
+
+                    /*if(this.refs.a.getElementsByClassName('ant-fullcalendar-value')[0].innerHTML==ms[i]){
+                            console.log(12);
+                    }*/
+
+                }
+            }
+        }
     }
 
-    dateCellRender=(value,data)=>{
+    dateCellRender=(value)=>{
+        //console.log(value._d.getDate());
         //const listData = this.getListData(value);
         //console.log(listData);
         /*return (
@@ -149,12 +150,13 @@ class CompanySchedule extends Component{
                                 getData={this.getData}
                                 getYearMonth={this.getYearMonth}
                                 onPanelChange={this.onPanelChange}
-                                dateCellRender={this.dateCellRender}
-                                monthCellRender={this.monthCellRender}
+
 
                             />
                         </div>
                         {/*
+                         dateCellRender={this.dateCellRender}
+                         monthCellRender={this.monthCellRender}
                          <div className="calendar">
                             <div className="calTitle">
                                 <img src={require("../img/weekPrev.png")} />

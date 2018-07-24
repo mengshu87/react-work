@@ -4,6 +4,11 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/user');
+//引cookie
+const cookieParase = require('cookie-parser');
+//添加中间件
+
+router.use(cookieParase());
 
 //创建数据
 /*User.create(
@@ -25,7 +30,7 @@ router.post('/',(req,res)=>{
     let {act,name,pass} = body;
 
     switch(act){
-        case 'add':
+        case '':
 
             break;
         case 'login':
