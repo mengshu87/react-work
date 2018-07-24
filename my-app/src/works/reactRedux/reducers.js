@@ -76,13 +76,38 @@ const reducerMySchedule=(state={content:[],page:0},action)=>{
             return state;
     }
 }
+//日历的日程
 const reducerCompanySchedule=(state=[],action)=>{
     switch(action.type){
         case 'GET_ALLDATA':
             let dataObj=Object.assign({},state);
             dataObj.content=action.data;
             return dataObj;
+        default:
+            return state;
+    }
+}
+//所有日程
+const reducerAllSchedule=(state={content:[],page:0},action)=>{
+    switch(action.type){
+        case 'GET_ALLDATA2':
+            let dataObj=Object.assign({},state);
+            dataObj.content=action.data;
+            return dataObj;
+        case 'GET_ALLPAGE':
+            let dataObj2=Object.assign({},state);
+            dataObj2.page=action.num;
+            return dataObj2;
+        default:
+            return state;
+    }
+}
 
+
+const reducer2=(state=[],action)=>{
+    switch(action.type){
+        case 'GET':
+            return action.data;
         default:
             return state;
     }
@@ -91,7 +116,9 @@ const reducers = combineReducers({
     reducerDepart,
     reducerUser,
     reducerMySchedule,
-    reducerCompanySchedule
+    reducerCompanySchedule,
+    reducerAllSchedule,
+    reducer2
 });
 
 export {reducers}

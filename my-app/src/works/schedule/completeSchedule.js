@@ -136,6 +136,7 @@ class CompleteSchedule extends Component{
 
     render(){
         let {data,pageNum}=this.props;
+        console.log(data);
         let {hVal,rVal,pVal,yVal,oVal,dt,tt,search,current}=this.state;
         let newArr=data.map((e,i)=>{
             return <CompleteList{...{

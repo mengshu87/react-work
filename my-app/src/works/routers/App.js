@@ -10,7 +10,7 @@ import CompleteSchedule from '../schedule/completeSchedule';
 import DocumentManage from '../document/documentManage';
 import RecycleBin from '../document/recycleBin';
 import InfoManage from '../info/infoManage';
-import InfoList from '../info/infoList';
+//import InfoList from '../info/infoList';
 import RoleManage from '../system/roleManage'
 import SecurityManage from '../system/securityManage';
 
@@ -61,10 +61,10 @@ const routs=[
         path:'/infoManage',
         component:InfoManage
     },
-    {
+    /*{
         path:'/infoList',
         component:InfoList
-    },
+    },*/
     {
         path:'/roleManage',
         component:RoleManage

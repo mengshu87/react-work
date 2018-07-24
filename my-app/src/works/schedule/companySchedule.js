@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actionCreators from '../actions/myScheduleAction';
 import Nav from '../nav/index';
+import {myQuery} from '../lib/public';
 import '../css/style.css';
 import '../css/calendar.css';
 import {toD} from '../lib/public';
@@ -15,97 +16,90 @@ moment.locale('zh-cn');
 class CompanySchedule extends Component{
     constructor(props){
         super(props);
-        this.state={
-            arr:[],
-            arr2:[]
+        this.state= {
+            arr: [],
+            arr2: [],
+            y: 1,
+            m: 1
         }
     }
-    componentDidMount(){
+    componentDidMount() {
+        let {y,m}=this.state;
         let {getAllData}=this.props;
-        setTimeout(function(){
+        setTimeout(function () {
             getAllData();
-            //console.log(data);
         });
+        y = this.refs.a.getElementsByClassName('ant-select-selection-selected-value')[0].innerHTML * 1;
+        m = this.refs.a.getElementsByClassName('ant-select-selection-selected-value')[1].innerHTML.substr(0, 1) * 1;
+       this.setState({y,m});
     }
+
+
+    getYearMonth=(year,month)=>{
+        let {y,m}=this.state;
+        y=year;
+        m=month;
+        this.setState({y,m});
+    }
+    onPanelChange=(value, mode)=>{
+        let date=value._d;
+        let year=date.getFullYear();
+        let month=date.getMonth()+1;
+        this.getYearMonth(year,month);
+    }
+
+
     getData=(value)=>{
-        let {arr}=this.state;
-        //console.log(Array.isArray(value));
+        let arr=[];
+        let {getData2}=this.props;
         value.forEach(e=>{
-            arr.push(e.date);
+            arr.push(e);
         })
-        //console.log(arr);
-        let time=new Date();
-        let y=time.getFullYear();
-        let m=toD(time.getMonth()+1);
-        let d=toD(time.getDate());
-        arr.filter(e=>{
-            return e;
+        let {y,m}=this.state;
+       let arrYear=arr.filter(e=>{
+            if(e.date.substr(0,4)==y){
+                return e;
+            }
         })
-        //console.log(arr);
-
-
-        //console.log(y,m,d);
-
+        let arrData=arrYear.filter(e=>{
+            if(e.date.substr(5,2)==m){
+                return e;
+            }
+        })
+        this.getListData(arrData);
     }
-
-    /*dateCellRender=(value)=>{
-        let {arr2}=this.state;
-        //console.log(arr2);
-        //console.log(value._d);
-        let y=value._d.getFullYear();
-        let m=value._d.getMonth()+1;
-        let d=value._d.getDate();
-        //let time=y+'-'+m+'-'+d;
-        let time=toD(y)+'-'+toD(m)+'-'+toD(d);
-        //arr2.indexOf(time);
-        console.log(value);
-
-        //return time;
-
-        //return <div className="red">●</div>;
-    }
-    /!*onSelect=(value)=>{
-        console.log(value);
-    }*!/
-
-    monthCellRender=(value)=>{
-        /!*return <div>自定义月数据</div>;*!/
-    }*/
-
-
-
     getListData=(value)=>{
+        console.log(value);
+        let d=value.map(e=>{
+            return e.date.substr(8,2)*1;
+        })
+        console.log(d);
         let listData;
-        switch (value.date()) {
-            case 8:
+
+        /*switch (value.date()) {
+            case 12:
                 listData = [
-                    { type: 'warning', content: 'This is warning event.' }
+                    { type: 'error' , content: ''}
 
                 ]; break;
-            case 10:
+            case 24:
                 listData = [
-                    { type: 'warning', content: 'This is warning event.' },
-                    { type: 'success', content: 'This is usual event.' },
-                    { type: 'error', content: 'This is error event.' },
+                    { type: 'error', content: '' }
                 ]; break;
-            case 15:
+            case 26:
                 listData = [
-                    { type: 'warning', content: 'This is warning event' },
-                    { type: 'success', content: 'This is very long usual event。。....' },
-                    { type: 'error', content: 'This is error event 1.' },
-                    { type: 'error', content: 'This is error event 2.' },
-                    { type: 'error', content: 'This is error event 3.' },
-                    { type: 'error', content: 'This is error event 4.' },
+                    { type: 'error', content: '' }
+
                 ]; break;
             default:
         }
-        return listData || [];
+        return listData || [];*/
     }
 
-    dateCellRender=(value)=>{
-        //let getListData=this.state;
-        const listData = this.getListData(value);
-        return (
+    dateCellRender=(value,data)=>{
+        //const listData = this.getListData(value);
+        //console.log(listData);
+        /*return (
             <ul className="events">
                 {
                     listData.map(item => (
@@ -115,24 +109,7 @@ class CompanySchedule extends Component{
                     ))
                 }
             </ul>
-        );
-    }
-
-    getMonthData=(value)=>{
-        if (value.month() === 8) {
-            return 1394;
-        }
-    }
-
-    monthCellRender=(value)=>{
-        //let {getMonthData}=this.state;
-        const num = this.getMonthData(value);
-        return num ? (
-            <div className="notes-month">
-                <section>{num}</section>
-                <span>Backlog number</span>
-            </div>
-        ) : null;
+        );*/
     }
 
     render(){
@@ -141,8 +118,6 @@ class CompanySchedule extends Component{
         if(data){
             this.getData(data)
         }
-
-
 
         return(
             <div className="wrapper" id="schedule">
@@ -169,16 +144,18 @@ class CompanySchedule extends Component{
                         </ul>
                     </div>
                     <div className="mt70 overflow">
+                        <div ref="a">
+                            <Calendar
+                                getData={this.getData}
+                                getYearMonth={this.getYearMonth}
+                                onPanelChange={this.onPanelChange}
+                                dateCellRender={this.dateCellRender}
+                                monthCellRender={this.monthCellRender}
 
-                        <Calendar
-                            dateCellRender={this.dateCellRender}
-                            monthCellRender={this.monthCellRender}
                             />
+                        </div>
                         {/*
-                         <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />,
-                            onSelect={this.onSelect}
-
-                            <div className="calendar">
+                         <div className="calendar">
                             <div className="calTitle">
                                 <img src={require("../img/weekPrev.png")} />
                                 <span ref="a">2018-06 </span>
@@ -265,6 +242,7 @@ class CompanySchedule extends Component{
 }
 export default connect((state)=>{
     return {
-        data:state.reducerCompanySchedule.content
+        data:state.reducerCompanySchedule.content,
+        data2:state.reducer2
     }
 },(dispatch)=>bindActionCreators(actionCreators,dispatch))(CompanySchedule);

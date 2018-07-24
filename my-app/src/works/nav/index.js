@@ -30,6 +30,21 @@ class Nav extends Component{
                     ]
                 },
                 {
+                    icon:'iconfont icon-xiaoxi',
+                    name:'发布日程',
+                    onOff:false,
+                    children:[
+                        {
+                            name:'发布日程',
+                            rs:'/infoManage'
+                        }/*,
+                         {
+                         name:'信息列表',
+                         rs:'/infoList'
+                         }*/
+                    ]
+                },
+                {
                     icon:'iconfont icon-Shapecopy',
                     name:'日程管理',
                     onOff:false,
@@ -60,21 +75,6 @@ class Nav extends Component{
                         {
                             name:'回收站',
                             rs:'/recycleBin'
-                        }
-                    ]
-                },
-                {
-                    icon:'iconfont icon-xiaoxi',
-                    name:'信息管理',
-                    onOff:false,
-                    children:[
-                        {
-                            name:'发布信息',
-                            rs:'/infoManage'
-                        },
-                        {
-                            name:'信息列表',
-                            rs:'/infoList'
                         }
                     ]
                 },

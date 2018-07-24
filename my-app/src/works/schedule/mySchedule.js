@@ -31,13 +31,13 @@ class MySchedule extends Component{
     componentDidMount(){
         let {getData,getPage}=this.props;
         setTimeout(function(){
-            getPage();
+            /*getPage();*/
             getData(1);
         });
     }
 
 
-    addData=()=>{
+    /*addData=()=>{
         myQuery('#addSchedule').style.display='block';
 
     }
@@ -98,7 +98,7 @@ class MySchedule extends Component{
     originChange=(ev)=>{
         let {value:oVal}=ev.target;
         this.setState({oVal});
-    }
+    }*/
     sure=()=>{
         let {getData,addData,getPage}=this.props;
         let {hVal,rVal,pVal,yVal,oVal,dt,tt}=this.state;
@@ -161,10 +161,10 @@ class MySchedule extends Component{
                     </div>
                     <div className="mt70 overflow">
                         <div className="schedule">
-                            <button
+                            {/*<button
                                 className="btn"
                                 onClick={this.addData}
-                            >添加日程</button>
+                            >添加日程</button>*/}
                             <div>
                                 {newArr}
                                 {/*<div className="work">
@@ -243,93 +243,95 @@ class MySchedule extends Component{
                         </div>
                     </div>
                 </section>
-                <div className="freameSec" id="addSchedule">
-                    <div className="frame framework">
-                        <div className="head">
-                            <span>日程</span>
-                            <span
-                                className="close"
-                                onClick={this.close}
-                            >×</span>
-                        </div>
-                        <div className="work">
-                            <div className="worMb">
-                                <select
-                                    className="span1"
-                                    name="部门会议"
-                                    value={hVal}
-                                    onChange={this.meetType}
-                                >
-                                    <option>部门会议</option>
-                                    <option>公司会议</option>
-                                    <option>销售会议</option>
-                                </select>
-                                <input
-                                    type="text"
-                                    placeholder="请描述日程内容"
-                                    className="workNR"
-                                    value={rVal}
-                                    onChange={this.titleChange}
-                                />
-                            </div>
-                            <div className="worMb location">
-                                <span className="span1">位置：</span>
-                                <input className="input1"
-                                    type="text"
-                                    value={pVal}
-                                    onChange={this.localChange}
-                                />
-                            </div>
-                            <div className="worMb time">
-                                <span className="span1">会议时间：</span>
-                                <div className="time">
-                                    <DatePicker
-                                        placeholder="请选择日期"
-                                        onChange={this.dateChange}
-                                        disabledDate={this.disabledDate}
-                                    />
-                                    <TimePicker
-                                        placeholder="请选择时间"
-                                        onChange={this.timeChange}
-                                        open={this.state.open}
-                                        onOpenChange={this.handleOpenChange}
-                                        addon={() => (
-                                              <Button size="small" type="primary" onClick={this.handleClose}>
-                                                Ok
-                                              </Button>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                            <div className="worMb person">
-                                <span className="span1">参与人员：</span>
-                                <input
-                                    className="input1"
-                                    type="text"
-                                    value={yVal}
-                                    onChange={this.personChange}
-                                />
-                            </div>
-                            <div className="worMb person">
-                                <span className="span1">发起人：</span>
-                                <input
-                                    className="input1"
-                                    type="text"
-                                    value={oVal}
-                                    onChange={this.originChange}
-                                />
-                            </div>
-                            <div className="btn">
-                                <button
-                                    onClick={this.cancel}
-                                >取消</button>
-                                <button
-                                    onClick={this.sure}
-                                >确定</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/*
+                 <div className="freameSec" id="addSchedule">
+                 <div className="frame framework">
+                 <div className="head">
+                 <span>日程</span>
+                 <span
+                 className="close"
+                 onClick={this.close}
+                 >×</span>
+                 </div>
+                 <div className="work">
+                 <div className="worMb">
+                 <select
+                 className="span1"
+                 name="部门会议"
+                 value={hVal}
+                 onChange={this.meetType}
+                 >
+                 <option>部门会议</option>
+                 <option>公司会议</option>
+                 <option>销售会议</option>
+                 </select>
+                 <input
+                 type="text"
+                 placeholder="请描述日程内容"
+                 className="workNR"
+                 value={rVal}
+                 onChange={this.titleChange}
+                 />
+                 </div>
+                 <div className="worMb location">
+                 <span className="span1">位置：</span>
+                 <input className="input1"
+                 type="text"
+                 value={pVal}
+                 onChange={this.localChange}
+                 />
+                 </div>
+                 <div className="worMb time">
+                 <span className="span1">会议时间：</span>
+                 <div className="time">
+                 <DatePicker
+                 placeholder="请选择日期"
+                 onChange={this.dateChange}
+                 disabledDate={this.disabledDate}
+                 />
+                 <TimePicker
+                 placeholder="请选择时间"
+                 onChange={this.timeChange}
+                 open={this.state.open}
+                 onOpenChange={this.handleOpenChange}
+                 addon={() => (
+                 <Button size="small" type="primary" onClick={this.handleClose}>
+                 Ok
+                 </Button>
+                 )}
+                 />
+                 </div>
+                 </div>
+                 <div className="worMb person">
+                 <span className="span1">参与人员：</span>
+                 <input
+                 className="input1"
+                 type="text"
+                 value={yVal}
+                 onChange={this.personChange}
+                 />
+                 </div>
+                 <div className="worMb person">
+                 <span className="span1">发起人：</span>
+                 <input
+                 className="input1"
+                 type="text"
+                 value={oVal}
+                 onChange={this.originChange}
+                 />
+                 </div>
+                 <div className="btn">
+                 <button
+                 onClick={this.cancel}
+                 >取消</button>
+                 <button
+                 onClick={this.sure}
+                 >确定</button>
+                 </div>
+                 </div>
+                 </div>
+                 </div>
+                */}
             </div>
         )
     }
