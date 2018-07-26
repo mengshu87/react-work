@@ -9,6 +9,7 @@ app.use('/user',require('./router/user'));
 app.use('/department',require('./router/department'));
 app.use('/usermanage',require('./router/usermanage'));
 app.use('/myschedule',require('./router/myschedule'));
+app.use('/weibo',require('./router/weibo'));
 
 app.use(express.static('works'));
 mongoose.connect("mongodb://127.0.0.1:27017");
